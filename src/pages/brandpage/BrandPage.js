@@ -12,7 +12,6 @@ export default function BrandPage() {
   let brandData = dataFromContext.brandData;
   if (brandData.length < 1) {
     brandData = JSON.parse(localStorage.getItem("brandDataInLocal"));
-    console.log(brandData);
   }
   const filteredData = brandData.filter((item) => {
     return item.Country === paramData.country;
@@ -39,8 +38,8 @@ export default function BrandPage() {
       <div className="data-container">
         {filteredData &&
           imageData &&
-          filteredData.map((item) => (
-            <Link to={"/brand/" + item.id}>
+          filteredData.map((item, index) => (
+            <Link to={"/brand/" + item.id} key={index}>
               <Card
                 imgUrl={imageData[getRandom()].Image}
                 brandName={item.Brand}

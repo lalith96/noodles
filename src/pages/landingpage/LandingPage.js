@@ -31,8 +31,8 @@ export default function LandingPage() {
       </center>
       <div className="data-container">
         {CountryData &&
-          CountryData.map((country) => (
-            <Link to={"/" + country}>
+          CountryData.map((country, index) => (
+            <Link to={"/" + country} key={index}>
               <Card countryName={country} />
             </Link>
           ))}
