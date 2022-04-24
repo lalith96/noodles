@@ -76,3 +76,13 @@
 .data-container a {
   text-decoration: none;
 }
+
+.container-fluid {
+  justify-content: flex-start !important;
+  margin-left: 100px;
+}
+
+.container-fluid a {
+  color: white;
+  text-decoration: none;
+}
